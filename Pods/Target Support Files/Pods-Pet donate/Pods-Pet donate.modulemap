@@ -1,0 +1,6 @@
+framework module Pods_Pet_donate {
+  umbrella header "Pods-Pet donate-umbrella.h"
+
+  export *
+  module * { export * }
+}
