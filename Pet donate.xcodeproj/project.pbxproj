@@ -18,6 +18,7 @@
 		7541D94C238FCF56005FC747 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7541D94A238FCF56005FC747 /* LaunchScreen.storyboard */; };
 		7541D956238FDD8D005FC747 /* ChooseTypeOfPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7541D955238FDD8D005FC747 /* ChooseTypeOfPet.swift */; };
 		7541D958239128EB005FC747 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7541D957239128EB005FC747 /* Pet.swift */; };
+		75522C332483D35F00535D18 /* Pet_donateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75522C322483D35F00535D18 /* Pet_donateTests.swift */; };
 		755AFF2A24633B89009045BA /* PetBlank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755AFF2924633B89009045BA /* PetBlank.swift */; };
 		755AFF2C24633BA0009045BA /* ShelterBlank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755AFF2B24633BA0009045BA /* ShelterBlank.swift */; };
 		755AFF2E24633DD9009045BA /* HelpForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755AFF2D24633DD9009045BA /* HelpForm.swift */; };
@@ -41,6 +42,16 @@
 		75D02C6D239D3E990045240E /* MainSc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D02C6C239D3E990045240E /* MainSc.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		75522C352483D35F00535D18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7541D934238FCF54005FC747 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7541D93B238FCF54005FC747;
+			remoteInfo = "Pet donate";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		752E101C241A82BA00374EA3 /* credentials (2).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "credentials (2).plist"; sourceTree = "<group>"; };
 		752E101E241A83F300374EA3 /* GoogleAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuth.swift; sourceTree = "<group>"; };
@@ -54,6 +65,9 @@
 		7541D94D238FCF56005FC747 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7541D955238FDD8D005FC747 /* ChooseTypeOfPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTypeOfPet.swift; sourceTree = "<group>"; };
 		7541D957239128EB005FC747 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
+		75522C302483D35F00535D18 /* Pet donateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pet donateTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		75522C322483D35F00535D18 /* Pet_donateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet_donateTests.swift; sourceTree = "<group>"; };
+		75522C342483D35F00535D18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		755AFF2924633B89009045BA /* PetBlank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBlank.swift; sourceTree = "<group>"; };
 		755AFF2B24633BA0009045BA /* ShelterBlank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterBlank.swift; sourceTree = "<group>"; };
 		755AFF2D24633DD9009045BA /* HelpForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpForm.swift; sourceTree = "<group>"; };
@@ -89,6 +103,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		75522C2D2483D35F00535D18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -96,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				7541D93E238FCF54005FC747 /* Pet donate */,
+				75522C312483D35F00535D18 /* Pet donateTests */,
 				7541D93D238FCF54005FC747 /* Products */,
 				C68DA5233CA5F53319C12C1F /* Pods */,
 				D8D26E499B0A85716033E2A8 /* Frameworks */,
@@ -106,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				7541D93C238FCF54005FC747 /* Pet donate.app */,
+				75522C302483D35F00535D18 /* Pet donateTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,6 +172,15 @@
 			path = "Pet donate";
 			sourceTree = "<group>";
 		};
+		75522C312483D35F00535D18 /* Pet donateTests */ = {
+			isa = PBXGroup;
+			children = (
+				75522C322483D35F00535D18 /* Pet_donateTests.swift */,
+				75522C342483D35F00535D18 /* Info.plist */,
+			);
+			path = "Pet donateTests";
+			sourceTree = "<group>";
+		};
 		C68DA5233CA5F53319C12C1F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,18 +221,40 @@
 			productReference = 7541D93C238FCF54005FC747 /* Pet donate.app */;
 			productType = "com.apple.product-type.application";
 		};
+		75522C2F2483D35F00535D18 /* Pet donateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75522C392483D35F00535D18 /* Build configuration list for PBXNativeTarget "Pet donateTests" */;
+			buildPhases = (
+				75522C2C2483D35F00535D18 /* Sources */,
+				75522C2D2483D35F00535D18 /* Frameworks */,
+				75522C2E2483D35F00535D18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				75522C362483D35F00535D18 /* PBXTargetDependency */,
+			);
+			name = "Pet donateTests";
+			productName = "Pet donateTests";
+			productReference = 75522C302483D35F00535D18 /* Pet donateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		7541D934238FCF54005FC747 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1120;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Виктория";
 				TargetAttributes = {
 					7541D93B238FCF54005FC747 = {
 						CreatedOnToolsVersion = 11.2.1;
+					};
+					75522C2F2483D35F00535D18 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 7541D93B238FCF54005FC747;
 					};
 				};
 			};
@@ -218,6 +272,7 @@
 			projectRoot = "";
 			targets = (
 				7541D93B238FCF54005FC747 /* Pet donate */,
+				75522C2F2483D35F00535D18 /* Pet donateTests */,
 			);
 		};
 /* End PBXProject section */
@@ -231,6 +286,13 @@
 				7541D94C238FCF56005FC747 /* LaunchScreen.storyboard in Resources */,
 				7541D949238FCF56005FC747 /* Assets.xcassets in Resources */,
 				7541D947238FCF54005FC747 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75522C2E2483D35F00535D18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,7 +392,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		75522C2C2483D35F00535D18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75522C332483D35F00535D18 /* Pet_donateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		75522C362483D35F00535D18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7541D93B238FCF54005FC747 /* Pet donate */;
+			targetProxy = 75522C352483D35F00535D18 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7541D945238FCF54005FC747 /* Main.storyboard */ = {
@@ -504,6 +582,48 @@
 			};
 			name = Release;
 		};
+		75522C372483D35F00535D18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HTSANL5KP7;
+				INFOPLIST_FILE = "Pet donateTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.Pet-donateTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pet donate.app/Pet donate";
+			};
+			name = Debug;
+		};
+		75522C382483D35F00535D18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HTSANL5KP7;
+				INFOPLIST_FILE = "Pet donateTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.Pet-donateTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pet donate.app/Pet donate";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -521,6 +641,15 @@
 			buildConfigurations = (
 				7541D951238FCF56005FC747 /* Debug */,
 				7541D952238FCF56005FC747 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75522C392483D35F00535D18 /* Build configuration list for PBXNativeTarget "Pet donateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75522C372483D35F00535D18 /* Debug */,
+				75522C382483D35F00535D18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
