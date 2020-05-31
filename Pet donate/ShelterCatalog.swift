@@ -10,7 +10,9 @@ import UIKit
 
 class ShelterCatalog: UIViewController {
     @IBAction func find(_ sender: Any) {
+        log.debug("Find button was pressed")
         if (searchString.text != ""){
+            log.info("Correst request")
             getReqForSearch(strSearch: searchString.text!)
             UserDefaults.standard.set(true, forKey: "search")
             UserDefaults.standard.set(searchString.text, forKey: "sheltSearch")
@@ -18,6 +20,7 @@ class ShelterCatalog: UIViewController {
         }
         else
         {
+            log.info("Empty request")
             n = 0
             leftBttn.isHidden = true
             rightBttn.isHidden = false
@@ -30,24 +33,28 @@ class ShelterCatalog: UIViewController {
     @IBOutlet weak var leftBttn: UIButton!
     
     @IBAction func accountInfo(_ sender: Any) {
+        log.debug("Account info was pressed")
          UserDefaults.standard.removeObject(forKey: "n")
         let vc = storyboard?.instantiateViewController(withIdentifier: "GoogleView") as! UIViewController
         self.present(vc, animated: true)
     }
     
     @IBAction func petCatalog(_ sender: Any) {
+        log.debug("Pet catalog was pressed")
         UserDefaults.standard.removeObject(forKey: "n")
         let vc = storyboard?.instantiateViewController(withIdentifier: "catalogPet") as! UIViewController
         self.present(vc, animated: true)
     }
     
     @IBAction func petScreen(_ sender: Any) {
+        log.debug("Main screen was pressed")
         UserDefaults.standard.removeObject(forKey: "n")
         let vc = storyboard?.instantiateViewController(withIdentifier: "MainScreen") as! UIViewController
                       self.present(vc, animated: true)
     }
     
     @IBAction func more_pressed(_ sender: Any) {
+        log.debug("More info was pressed")
         UserDefaults.standard.set(n, forKey: "n")
         let vc = storyboard?.instantiateViewController(withIdentifier: "cardOfShelter") as! UIViewController
         self.present(vc, animated: true)
@@ -56,6 +63,7 @@ class ShelterCatalog: UIViewController {
     @IBOutlet weak var shelterlocation: UILabel!
     @IBOutlet weak var shelterName: UILabel!
     @IBAction func left_pressed(_ sender: Any) {
+        log.debug("Left button was pressed")
         n -= 1
         if (n == 0) {
             leftBttn.isHidden = true
@@ -67,6 +75,7 @@ class ShelterCatalog: UIViewController {
     }
    
     @IBAction func right_pressed(_ sender: Any) {
+        log.debug("Right button was pressed")
         n += 1
         if (n == 0) {
             leftBttn.isHidden = true
@@ -80,6 +89,7 @@ class ShelterCatalog: UIViewController {
     var n: Int = 0
     @IBOutlet weak var shelterPicture: UIImageView!
     override func viewDidLoad() {
+        log.debug("Shelter catalog was loaded")
         super.viewDidLoad()
         if (UserDefaults.standard.integer(forKey: "n") != nil) {
             n = UserDefaults.standard.integer(forKey: "n")
@@ -121,6 +131,7 @@ class ShelterCatalog: UIViewController {
        }
     
     func Wagner_Fischer_for_Damerau_Levenshtein(str1: String, str2:String) -> Int{
+        log.info("Wagner Fisher was started")
         var len_s:Int = str1.count
         var len_t:Int = str2.count
         var s = Array(str1)
@@ -157,6 +168,7 @@ class ShelterCatalog: UIViewController {
         print(str2)
         print(arr[len_s-1][len_t-1])
         return arr[len_s-1][len_t-1]
+        log.info("Wagner Fisher was ended")
     }
     
     func getReq(n:Int) {

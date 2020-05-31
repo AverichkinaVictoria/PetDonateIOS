@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var petPicture: UIImageView!
     
     @IBAction func choose_press(_ sender: Any){
+        log.info("Choose button pressed")
 
         let myPet = Pet()
         myPet.name = petName.text!
@@ -27,6 +28,7 @@ class ViewController: UIViewController {
             bottomLine.backgroundColor = CGColor (srgbRed: 1, green: 0, blue: 0, alpha: 1)
             petName.text = ""
             petName.placeholder = "Неверно введено имя"
+        log.info("Wrong name initialization")
         } else {
              bottomLine.backgroundColor = CGColor (srgbRed: 0, green: 0, blue: 0, alpha: 1)
             if(petChange == 0) {
@@ -37,6 +39,7 @@ class ViewController: UIViewController {
             
             if(myPet.name != "" && myPet.name.count >= 2 && myPet.name.count <= 8) {
                 UserDefaults.standard.set(myPet.name, forKey: "name")
+                log.info("Pet name was saved")
                 let vc = storyboard?.instantiateViewController(withIdentifier: "ChooseType") as! UIViewController
                     self.present(vc, animated: true)
             }
@@ -44,6 +47,7 @@ class ViewController: UIViewController {
     }
    
     @IBAction func left_press(_ sender: Any) {
+        log.info("Left click")
         if(petChange == 0) {
             petPicture.image = UIImage(named: "cat picture")
             petType.text = "Кошка"
@@ -56,6 +60,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func right_press(_ sender: Any) {
+        log.info("Right click")
         if(petChange == 0) {
             petPicture.image = UIImage(named: "cat picture")
             petType.text = "Кошка"
@@ -69,6 +74,7 @@ class ViewController: UIViewController {
     var bottomLine = CALayer()
 
     override func viewDidLoad() {
+        log.info("Screen of choosing pet type was loaded")
         
         super.viewDidLoad()
         DispatchQueue.main.async {

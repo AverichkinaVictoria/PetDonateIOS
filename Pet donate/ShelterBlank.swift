@@ -10,15 +10,18 @@ import UIKit
 
 class ShelterBlank: UIViewController {
     @IBAction func confirm_pressed(_ sender: Any) {
+        log.debug("Confirm shelter blank was pressed")
         if (dateUser.text != nil && dateUser.text != "" && emailUser.text != nil && emailUser.text != "" && phoneNumber.text != nil && phoneNumber.text != "" && userName.text != nil  && userName.text != "" ) {
             bottomLineDate.backgroundColor = CGColor (srgbRed: 0, green: 0, blue: 0, alpha: 1)
             bottomLinePhone.backgroundColor = CGColor (srgbRed: 0, green: 0, blue: 0, alpha: 1)
             bottomLineEmail.backgroundColor = CGColor (srgbRed: 0, green: 0, blue: 0, alpha: 1)
             bottomLineName.backgroundColor = CGColor (srgbRed: 0, green: 0, blue: 0, alpha: 1)
             getReqAndNesInfo(n: UserDefaults.standard.integer(forKey: "n"))
+            log.info("Correct info in shelter blank")
             let vc = storyboard?.instantiateViewController(withIdentifier: "thankYouSc") as! UIViewController
             self.present(vc, animated: true)
         } else{
+            log.warning("Incorrect info in shelter blank")
             displayIncorrect()
         }
         
@@ -31,6 +34,7 @@ class ShelterBlank: UIViewController {
     
     @IBOutlet weak var shelterName: UILabel!
     @IBAction func back_pressed(_ sender: Any) {
+        log.debug("Back button was pressed")
         let vc = storyboard?.instantiateViewController(withIdentifier: "cardOfShelter") as! UIViewController
         self.present(vc, animated: true)
     }
@@ -41,6 +45,7 @@ class ShelterBlank: UIViewController {
       var bottomLineDate = CALayer()
     
     override func viewDidLoad() {
+        log.debug("Shelter blank was loaded")
         super.viewDidLoad()
         
         getReq(n: UserDefaults.standard.integer(forKey: "n"))

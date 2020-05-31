@@ -10,6 +10,7 @@ import UIKit
 
 class PetCatalog: UIViewController {
     @IBAction func left_click(_ sender: Any) {
+        log.debug("Left button was pressed")
         n -= 1
                if (n == 0) {
                    leftBttn.isHidden = true
@@ -21,6 +22,7 @@ class PetCatalog: UIViewController {
     }
     
     @IBAction func right_click(_ sender: Any) {
+        log.debug("Right button was pressed")
         n += 1
                if (n == 0){
                    leftBttn.isHidden = true
@@ -32,6 +34,7 @@ class PetCatalog: UIViewController {
     }
     
     @IBAction func shelterCatalog(_ sender: Any) {
+        log.debug("Shelter catalog was pressed")
         UserDefaults.standard.removeObject(forKey: "n_pet")
         let vc = storyboard?.instantiateViewController(withIdentifier: "CatalogOfShelters") as! UIViewController
         self.present(vc, animated: true)
@@ -45,18 +48,21 @@ class PetCatalog: UIViewController {
     @IBOutlet weak var petPicture: UIImageView!
     
     @IBAction func moreInfo_pressed(_ sender: Any) {
+        log.debug("More info was pressed")
         UserDefaults.standard.set(n, forKey: "n_pet")
         let vc = storyboard?.instantiateViewController(withIdentifier: "petCard") as! UIViewController
         self.present(vc, animated: true)
     }
     
     @IBAction func petScreen_pressed(_ sender: Any) {
+        log.debug("Main screen was pressed")
         UserDefaults.standard.removeObject(forKey: "n_pet")
         let vc = storyboard?.instantiateViewController(withIdentifier: "MainScreen") as! UIViewController
                self.present(vc, animated: true)
     }
     
     @IBAction func accountInfo_pressed(_ sender: Any) {
+        log.debug("Account info was pressed")
         UserDefaults.standard.removeObject(forKey: "n_pet")
         let vc = storyboard?.instantiateViewController(withIdentifier: "GoogleView") as! UIViewController
         self.present(vc, animated: true)
@@ -66,6 +72,7 @@ class PetCatalog: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        log.debug("Pet catalog was loaded")
        
        if (UserDefaults.standard.integer(forKey: "n_pet") != nil) {
            n = UserDefaults.standard.integer(forKey: "n_pet")

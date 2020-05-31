@@ -8,6 +8,8 @@
 
 import UIKit
 import GoogleSignIn
+import SwiftyBeaver
+let log = SwiftyBeaver.self
 
 @UIApplicationMain
 
@@ -41,6 +43,11 @@ func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError err
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         GIDSignIn.sharedInstance().clientID = "332998443542-fcpph3qc7h303bndqel86d8q0glc58na.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().delegate = self
+        
+        let console = ConsoleDestination()
+        log.addDestination(console)
+        log.info("The launch of app")
+        
         return true
     }
 

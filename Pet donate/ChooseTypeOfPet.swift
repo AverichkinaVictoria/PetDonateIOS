@@ -11,6 +11,7 @@ import UIKit
 class ChooseTypeOfPet: UIViewController {
     
     @IBAction func color3Pressed(_ sender: Any) {
+        log.info("Third color was chose")
         UserDefaults.standard.set(2, forKey: "color")
         var imgListArr1 :NSMutableArray = []
         for i in 0...89 {
@@ -24,6 +25,7 @@ class ChooseTypeOfPet: UIViewController {
     }
     
     @IBAction func color2Pressed(_ sender: Any) {
+        log.info("Second color was chose")
         UserDefaults.standard.set(1, forKey: "color")
         var imgListArr1 :NSMutableArray = []
         for i in 0...89 {
@@ -37,6 +39,7 @@ class ChooseTypeOfPet: UIViewController {
     }
     
     @IBAction func color1Pressed(_ sender: Any) {
+        log.info("First color was chose")
         UserDefaults.standard.set(0, forKey: "color")
         var imgListArr1 :NSMutableArray = []
         for i in 0...89 {
@@ -63,10 +66,12 @@ class ChooseTypeOfPet: UIViewController {
     var strName :String = ""
     
     @IBAction func back(_ sender: Any) {
+        log.info("Back button was pressed")
         let vc = storyboard?.instantiateViewController(withIdentifier: "first") as! UIViewController
         self.present(vc, animated: true)
     }
     @IBAction func left(_ sender: Any) {
+        log.info("Left button was pressed")
         self.typePicture.stopAnimating()
         var imgListArr1 :NSMutableArray = []
         
@@ -85,6 +90,7 @@ class ChooseTypeOfPet: UIViewController {
     }
     
     @IBAction func right(_ sender: Any) {
+        log.info("Right button was pressed")
         self.typePicture.stopAnimating()
         var imgListArr :NSMutableArray = []
         n += 1
@@ -101,12 +107,15 @@ class ChooseTypeOfPet: UIViewController {
     
     
     @IBAction func choose(_ sender: Any) {
+        log.info("Choose pet type was pressed")
         UserDefaults.standard.set([pictures[abs(n%3)]], forKey: "typePicture")
         UserDefaults.standard.set(abs(n%3), forKey: "type")
+        log.info("Pet skin was saved")
         let vc = storyboard?.instantiateViewController(withIdentifier: "MainScreen") as! UIViewController
         self.present(vc, animated: true)
     }
     override func viewDidLoad() {
+        log.info("Skin choose screen was loaded")
         setColors()
         UserDefaults.standard.set(0, forKey: "color")
         var imgListArr :NSMutableArray = []
@@ -126,6 +135,7 @@ class ChooseTypeOfPet: UIViewController {
     }
     
       @objc func setColors(){
+        log.info("Colors was reset")
        let colorStr1:String = "\(colors[abs(n%3)])"+"1"
         var imageColor1 = UIImage(named: colorStr1)
         color1.setBackgroundImage(imageColor1, for: UIControl.State.normal)

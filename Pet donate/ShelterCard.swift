@@ -16,17 +16,20 @@ class ShelterCard: UIViewController {
     @IBOutlet weak var shelterName: UILabel!
     @IBOutlet weak var shelterPicture: UIImageView!
     @IBAction func confirm_pressed(_ sender: Any) {
+        log.debug("Confirm visit was pressed")
         let vc = storyboard?.instantiateViewController(withIdentifier: "shelterVisit") as! UIViewController
         self.present(vc, animated: true)
     }
     
     @IBAction func back_pressed(_ sender: Any) {
+        log.debug("Back button was pressed")
         UserDefaults.standard.removeObject(forKey: "search")
         let vc = storyboard?.instantiateViewController(withIdentifier: "CatalogOfShelters") as! UIViewController
         self.present(vc, animated: true)
     }
     
     @IBAction func accountInfo(_ sender: Any) {
+        log.debug("Account info was pressed")
         UserDefaults.standard.removeObject(forKey: "search")
         UserDefaults.standard.removeObject(forKey: "n")
         let vc = storyboard?.instantiateViewController(withIdentifier: "GoogleView") as! UIViewController
@@ -34,6 +37,7 @@ class ShelterCard: UIViewController {
     }
     
     @IBAction func petCatalog(_ sender: Any) {
+        log.debug("Pet catalog was pressed")
         UserDefaults.standard.removeObject(forKey: "search")
         UserDefaults.standard.removeObject(forKey: "n")
         let vc = storyboard?.instantiateViewController(withIdentifier: "catalogPet") as! UIViewController
@@ -41,6 +45,7 @@ class ShelterCard: UIViewController {
     }
     
     @IBAction func petScreen(_ sender: Any) {
+        log.debug("Main screen was pressed")
         UserDefaults.standard.removeObject(forKey: "search")
         UserDefaults.standard.removeObject(forKey: "n")
         let vc = storyboard?.instantiateViewController(withIdentifier: "MainScreen") as! UIViewController
@@ -48,6 +53,7 @@ class ShelterCard: UIViewController {
     }
     
     override func viewDidLoad() {
+        log.debug("Shelter card was loaded")
         super.viewDidLoad()
         if (UserDefaults.standard.bool(forKey: "search") != nil && UserDefaults.standard.bool(forKey: "search") == true) {
             getReqForSearch(strSearch: UserDefaults.standard.string(forKey: "sheltSearch")!)
@@ -59,6 +65,7 @@ class ShelterCard: UIViewController {
     }
     
     func Wagner_Fischer_for_Damerau_Levenshtein(str1: String, str2:String) -> Int{
+        log.info("Wagner Fisher has been started")
            var len_s:Int = str1.count
            var len_t:Int = str2.count
            var s = Array(str1)
@@ -95,6 +102,7 @@ class ShelterCard: UIViewController {
            print(str2)
            print(arr[len_s-1][len_t-1])
            return arr[len_s-1][len_t-1]
+        log.info("Wagner Fisher was ended")
        }
     
     func getReqForSearch(strSearch:String) {

@@ -7,5 +7,6 @@ pod 'GoogleSignIn'
   use_frameworks!
 
   # Pods for Pet donate
+  pod 'SwiftyBeaver'
 
 end

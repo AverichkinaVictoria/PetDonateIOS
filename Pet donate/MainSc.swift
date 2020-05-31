@@ -12,21 +12,25 @@ import UIKit
 class MainSc: UIViewController {
     
     @IBAction func shelterCatalog(_ sender: Any) {
+        log.debug("Shelter catalog was pressed")
         let vc = storyboard?.instantiateViewController(withIdentifier: "CatalogOfShelters") as! UIViewController
         self.present(vc, animated: true)
     }
     
     @IBAction func catalogPet_pressed(_ sender: Any) {
+        log.debug("Pet catalog was pressed")
     let vc = storyboard?.instantiateViewController(withIdentifier: "catalogPet") as! UIViewController
     self.present(vc, animated: true)
     }
     
     @IBAction func change_pet(_ sender: Any) {
+        log.debug("Change pet was pressed")
        let vc = storyboard?.instantiateViewController(withIdentifier: "petChange") as! UIViewController
         self.present(vc, animated: true)
     }
     
     @IBAction func AccountInfo(_ sender: Any) {
+        log.debug("Account info was pressed")
         let vc = storyboard?.instantiateViewController(withIdentifier: "GoogleView") as! UIViewController
         self.present(vc, animated: true)
     }
@@ -34,6 +38,7 @@ class MainSc: UIViewController {
     @IBOutlet weak var meal: UIImageView!
     
     @IBAction func healthPlus(_ sender: Any) {
+        log.debug("Health plus bar was pressed")
         saveProgressBars()
         UserDefaults.standard.set("health", forKey: "typeOfPayment")
        let vc = storyboard?.instantiateViewController(withIdentifier: "screen_4") as! UIViewController
@@ -41,6 +46,7 @@ class MainSc: UIViewController {
     }
     
     @IBAction func funPlus(_ sender: Any) {
+        log.debug("Fun plus bar was pressed")
         saveProgressBars()
         UserDefaults.standard.set("fun", forKey: "typeOfPayment")
         let vc = storyboard?.instantiateViewController(withIdentifier: "screen_4") as! UIViewController
@@ -49,6 +55,7 @@ class MainSc: UIViewController {
     
     
     @IBAction func foodPlus(_ sender: Any) {
+        log.debug("Food plus bar was pressed")
         saveProgressBars()
         UserDefaults.standard.set("food", forKey: "typeOfPayment")
         let vc = storyboard?.instantiateViewController(withIdentifier: "screen_4") as! UIViewController
@@ -72,7 +79,7 @@ class MainSc: UIViewController {
    
     override func viewDidLoad()
     {
-        
+        log.debug("Main screen was loaded")
         if (UserDefaults.standard.string(forKey: "food") != nil) {
             food.progress = UserDefaults.standard.float(forKey: "food")
             fun.progress = UserDefaults.standard.float(forKey: "fun")
@@ -154,6 +161,7 @@ class MainSc: UIViewController {
     }
     
     @objc func upgradeBars() {
+        log.debug("Bars were upgraded")
         if (UserDefaults.standard.string(forKey: "typeOfPayment") == "health") {
             if (UserDefaults.standard.string(forKey: "typePaid") == "1") {
                 if (health.progress <= 0.8) {
@@ -406,6 +414,7 @@ class MainSc: UIViewController {
     
     @objc func saveProgressBars()
     {
+        log.info("Bars were saved")
         UserDefaults.standard.set(food.progress, forKey: "food")
         UserDefaults.standard.set(fun.progress, forKey: "fun")
         UserDefaults.standard.set(health.progress, forKey: "health")

@@ -10,17 +10,19 @@ import UIKit
 
 class PetBlank: UIViewController {
     @IBAction func confirm_pressed(_ sender: Any) {
+        log.debug("Confirm pet blank was pressed")
         
         if ( emailUser.text != nil && emailUser.text != "" && phoneNumber.text != nil && phoneNumber.text != "" && nameUser.text != nil  && nameUser.text != "" ) {
             bottomLinePhone.backgroundColor = CGColor (srgbRed: 0, green: 0, blue: 0, alpha: 1)
             bottomLineEmail.backgroundColor = CGColor (srgbRed: 0, green: 0, blue: 0, alpha: 1)
             bottomLineName.backgroundColor = CGColor (srgbRed: 0, green: 0, blue: 0, alpha: 1)
             getReqAndNesInfo(n: UserDefaults.standard.integer(forKey: "n"))
-           
+            log.info("Correct pet blank info")
             let vc = storyboard?.instantiateViewController(withIdentifier: "thankYouSc") as! UIViewController
             self.present(vc, animated: true)
 
         } else {
+            log.warning("Incorrect info of pet blank")
             displayIncorrect()
         }
             }
@@ -33,6 +35,7 @@ class PetBlank: UIViewController {
     @IBOutlet weak var shelterName: UILabel!
     
     @IBAction func back_pressed(_ sender: Any) {
+        log.debug("Back button was pressed")
         let vc = storyboard?.instantiateViewController(withIdentifier: "petCard") as! UIViewController
         self.present(vc, animated: true)
     
@@ -42,6 +45,7 @@ class PetBlank: UIViewController {
     var bottomLinePhone = CALayer()
     var bottomLineEmail = CALayer()
     override func viewDidLoad() {
+        log.debug("Pet blank was loaded")
         super.viewDidLoad()
         getReq(n: UserDefaults.standard.integer(forKey: "n_pet"))
 

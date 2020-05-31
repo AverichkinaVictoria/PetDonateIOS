@@ -11,6 +11,7 @@ import UIKit
 class PetCard: UIViewController {
     @IBOutlet weak var petPicture: UIImageView!
     @IBAction func confirm_pressed(_ sender: Any) {
+        log.debug("Confirm visit was pressed")
         let vc = storyboard?.instantiateViewController(withIdentifier: "petAdopt") as! UIViewController
         self.present(vc, animated: true)
     }
@@ -21,27 +22,32 @@ class PetCard: UIViewController {
     @IBOutlet weak var petName: UILabel!
     
     @IBAction func shelterCatalog(_ sender: Any) {
+        log.debug("Shelter catalog was pressed")
         let vc = storyboard?.instantiateViewController(withIdentifier: "CatalogOfShelters") as! UIViewController
         self.present(vc, animated: true)
     }
     
     @IBAction func back_pressed(_ sender: Any) {
+        log.debug("Back button was pressed")
         let vc = storyboard?.instantiateViewController(withIdentifier: "catalogPet") as! UIViewController
         self.present(vc, animated: true)
     }
     
     @IBAction func accountInfo_pressed(_ sender: Any) {
+        log.debug("Account info was pressed")
         let vc = storyboard?.instantiateViewController(withIdentifier: "GoogleView") as! UIViewController
         self.present(vc, animated: true)
     }
     
     @IBAction func petScreen(_ sender: Any) {
+        log.debug("Main screen was pressed")
         let vc = storyboard?.instantiateViewController(withIdentifier: "MainScreen") as! UIViewController
         self.present(vc, animated: true)
     }
     
     @IBOutlet weak var petScreen_pressed: UIButton!
     override func viewDidLoad() {
+        log.debug("Pet card was loaded")
         super.viewDidLoad()
         getReq(n: UserDefaults.standard.integer(forKey: "n_pet"))
 
